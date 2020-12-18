@@ -1,0 +1,57 @@
+{
+    "Bodies": [
+        {
+            "head": "_head_base.png",
+            "types_no_breasts": [
+                {
+                    "chubby": [
+                        {   
+                            "name": "Chubby.png"
+                        }
+                    ],
+                    "curvy": [
+                        {   
+                            "name": "Curvy.png"
+                        }
+                    ],
+                    "masculine": [
+                        {   
+                            "name": "Masculine.png"
+                        }
+                    ],
+                    "skinny": [
+                        {   
+                            "name": "Skinny.png"
+                        }
+                    ]
+                }
+            ],
+            "types_breasts": [
+                {
+                    "chubby": [
+                        {   
+                            "name": "Chubby_breasts.png"
+                        }
+                    ],
+                    "curvy": [
+                        {   
+                            "name": "Curvy_breasts.png"
+                        }
+                    ],
+                    "masculine": [
+                        {   
+                            "name": "Masculine_breasts.png"
+                        }
+                    ],
+                    "skinny": [
+                        {   
+                            "name": "Skinny_breasts.png"
+                        }
+                    ]
+                }
+            ]
+            
+        }
+    ]
+}
+    

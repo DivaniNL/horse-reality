@@ -1,0 +1,95 @@
+{
+    "head": [
+        {
+            "beautymark":[
+                {
+                    "id": 1,
+                    "image": "beautymark_1.png"
+                },
+                {
+                    "id": 2,
+                    "image": "beautymark_2.png"
+                },
+                {
+                    "id": 3,
+                    "image": "beautymark_3.png"
+                }
+            ],
+            "eyebrows":[
+                {
+                    "id": 1,
+                    "image": "brows_1.png"
+                },
+                {
+                    "id": 2,
+                    "image": "brows_2.png"
+                },
+                {
+                    "id": 3,
+                    "image": "brows_3.png"
+                }
+            ],
+            "eyes":[
+                {
+                    "id": 1,
+                    "image": "eyes_1.png"
+                },
+                {
+                    "id": 2,
+                    "image": "eyes_2.png"
+                },
+                {
+                    "id": 3,
+                    "image": "eyes_3.png"
+                }
+            ],
+            "hair":[
+                {
+                    "id": 1,
+                    "image": "hair_1.png"
+                },
+                {
+                    "id": 2,
+                    "image": "hair_2.png"
+                },
+                {
+                    "id": 3,
+                    "image": "hair_3.png"
+                },
+                {
+                    "id": 4,
+                    "image": "hair_4.png"
+                }
+            ],
+            "mouth":[
+                {
+                    "id": 1,
+                    "image": "mouth_1.png"
+                },
+                {
+                    "id": 2,
+                    "image": "mouth_2.png"
+                },
+                {
+                    "id": 3,
+                    "image": "mouth_3.png"
+                }
+            ],
+            "nose":[
+                {
+                    "id": 1,
+                    "image": "nose_1.png"
+                },
+                {
+                    "id": 2,
+                    "image": "nose_2.png"
+                },
+                {
+                    "id": 3,
+                    "image": "nose_3.png"
+                }
+            ]
+
+        }
+    ]
+}

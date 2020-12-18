@@ -1,0 +1,104 @@
+{
+    "Clothing": [
+        {
+            "Shirts": [
+                {
+                    "Skinny":[
+                        {
+                            "name": "shirt_black.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_black_breasts.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_white.png",
+                            "color": "white"
+                        },
+                        {
+                            "name": "shirt_white_breasts.png",
+                            "color": "white"
+                        }
+                    ]
+                },
+                {
+                    "Curvy": [
+                        {
+                            "name": "shirt_black.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_black_breasts.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_white.png",
+                            "color": "white"
+                        },
+                        {
+                            "name": "shirt_white_breasts.png",
+                            "color": "white"
+                        }
+                    ]
+                },
+                {
+                    "Chubby":[
+                        {
+                            "name": "shirt_black.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_black_breasts.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_white.png",
+                            "color": "white"
+                        },
+                        {
+                            "name": "shirt_white_breasts.png",
+                            "color": "white"
+                        }
+                    ]
+                },
+                {
+                    "Masculine":[
+                        {
+                            "name": "shirt_black.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_black_breasts.png",
+                            "color": "black"
+                        },
+                        {
+                            "name": "shirt_white.png",
+                            "color": "white"
+                        },
+                        {
+                            "name": "shirt_white_breasts.png",
+                            "color": "white"
+                        }
+                    ]
+                }
+            ],
+            "Bottom": [
+                {
+                    "Skinny": [{
+                        "name": "jeans_grey.png"
+                    }],
+                    "Curvy": [{
+                        "name": "jeans_grey.png"
+                    }],
+                    "Chubby": [{
+                        "name": "jeans_grey.png"
+                    }],
+                    "Masculine": [{
+                        "name": "jeans_grey.png"
+                    }]
+                }
+            ]
+        }
+    ]
+}
