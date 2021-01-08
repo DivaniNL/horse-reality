@@ -1,57 +1,84 @@
 {
-    "Bodies": [
-        {
-            "head": "_head_base.png",
-            "types_no_breasts": [
-                {
-                    "chubby": [
-                        {   
-                            "name": "Chubby.png"
-                        }
-                    ],
-                    "curvy": [
-                        {   
-                            "name": "Curvy.png"
-                        }
-                    ],
-                    "masculine": [
-                        {   
-                            "name": "Masculine.png"
-                        }
-                    ],
-                    "skinny": [
-                        {   
-                            "name": "Skinny.png"
-                        }
-                    ]
-                }
-            ],
-            "types_breasts": [
-                {
-                    "chubby": [
-                        {   
-                            "name": "Chubby_breasts.png"
-                        }
-                    ],
-                    "curvy": [
-                        {   
-                            "name": "Curvy_breasts.png"
-                        }
-                    ],
-                    "masculine": [
-                        {   
-                            "name": "Masculine_breasts.png"
-                        }
-                    ],
-                    "skinny": [
-                        {   
-                            "name": "Skinny_breasts.png"
-                        }
-                    ]
-                }
-            ]
-            
+    "Bodies": {
+        "head": "Bodies/_head_base.png",
+        "types_no_breasts": {
+            "chubby": "Bodies/Chubby.png",
+            "curvy": "Bodies/Curvy.png",
+            "masculine": "Bodies/Masculine.png",
+            "skinny": "Bodies/Skinny.png"
+        },
+        "types_breasts": {
+            "chubby": "Bodies/Chubby_breasts.png",
+            "curvy": "Bodies/Curvy_breasts.png",
+            "masculine": "Bodies/Masculine_breasts.png",
+            "skinny": "Bodies/Skinny_breasts.png"
         }
-    ]
+    },
+    "Clothing": {
+        "Shirts": {
+            "Skinny": {
+                "black_breasts": "Clothing/Shirts/skinny/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/skinny/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/skinny/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/skinny/shirt_white.png"
+            },
+            "Curvy": {
+                "black_breasts": "Clothing/Shirts/curvy/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/curvy/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/curvy/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/curvy/shirt_white.png"
+            },
+            "Chubby": {
+                "black_breasts": "Clothing/Shirts/chubby/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/chubby/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/chubby/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/chubby/shirt_white.png"
+            },
+            "Masculine": {
+                "black_breasts": "Clothing/Shirts/masculine/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/masculine/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/masculine/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/masculine/shirt_white.png"
+            }
+        },
+        "Bottom": {
+            "Skinny": "Clothing/Bottom/skinny/jeans_grey.png",
+            "Curvy": "Clothing/Bottom/curvy/jeans_grey.png",
+            "Chubby": "Clothing/Bottom/chubby/jeans_grey.png",
+            "Masculine": "Clothing/Bottom/masculine/jeans_grey.png"
+        }
+    },
+    "Head": {
+        "beautymark": {
+            "img1": "Head/beautymark_1.png",
+            "img2": "Head/beautymark_2.png",
+            "img3": "Head/beautymark_3.png"
+        },
+        "eyebrows": {
+            "img1": "Head/brows_1.png",
+            "img2": "Head/brows_2.png",
+            "img3": "Head/brows_3.png"
+        },
+        "eyes": {
+            "img1": "Head/eyes_1.png",
+            "img2": "Head/eyes_2.png",
+            "img3": "Head/eyes_3.png"
+        },
+        "hair": {
+            "img1": "Head/hair_1.png",
+            "img2": "Head/hair_2.png",
+            "img3": "Head/hair_3.png",
+            "img4": "Head/hair_4.png"
+        },
+        "mouth": {
+            "img1": "Head/mouth_1.png",
+            "img2": "Head/mouth_2.png",
+            "img3": "Head/mouth_3.png"
+        },
+        "nose": {
+            "img1": "Head/nose_1.png",
+            "img2": "Head/nose_2.png",
+            "img3": "Head/nose_3.png"
+        }
+    }
 }
-    

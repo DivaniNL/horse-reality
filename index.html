@@ -5,9 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horse reality</title>
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     
 </head>
 <body>
     <h2>Hello</h2>
+    <script>
+        const Read_all = () => {
+            fetch("assets/models/bodies.json")
+            .then(response => response.json())
+            .then(data => {
+                    Show(data);
+            }).catch(error => console.log('error is', error));
+        }
+
+        Read_all();
+    
+        let Show = (data) => {
+            console.log();
+
+            //choose head
+            let head = document.createElement('img');
+            head.src= "assets/img/" + data["Bodies"]["head"];
+            head.style.position = "absolute";
+            head.style.zIndex = 1;
+
+            //choose body
+            let bodyimg = document.createElement('img');
+            bodyimg.src= "assets/img/" + data["Bodies"]["types_no_breasts"]["skinny"];            
+            bodyimg.style.position = "absolute";
+            bodyimg.style.zIndex = 2;
+
+            //choose shirt
+            let shirtimg = document.createElement('img');
+            shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"]["Skinny"]["black_no_breasts"];            
+            shirtimg.style.position = "absolute";
+            shirtimg.style.zIndex = 3;
+            
+            //choose bottom
+            let bottomimg = document.createElement('img');
+            bottomimg.src= "assets/img/" + data["Clothing"]["Bottom"]["Skinny"];            
+            bottomimg.style.position = "absolute";
+            bottomimg.style.zIndex = 4;
+            
+            //choose hair            
+            let hair = document.createElement('img');
+            hair.src= "assets/img/" + data["Head"]["hair"]["img2"];            
+            hair.style.position = "absolute";
+            hair.style.zIndex = 7;
+            
+            //choose brows
+            let eyebrows = document.createElement('img');
+            eyebrows.src= "assets/img/" + data["Head"]["eyebrows"]["img1"];            
+            eyebrows.style.position = "absolute";
+            eyebrows.style.zIndex = 5;
+            
+            //choose eyes
+            let eyes = document.createElement('img');
+            eyes.src= "assets/img/" + data["Head"]["eyes"]["img1"];            
+            eyes.style.position = "absolute";
+            eyes.style.zIndex = 6;
+            
+            //choose nose
+            let nose = document.createElement('img');
+            nose.src= "assets/img/" + data["Head"]["nose"]["img1"];            
+            nose.style.position = "absolute";
+            nose.style.zIndex = 7;
+            
+            //choose mouth
+            let mouth = document.createElement('img');
+            mouth.src= "assets/img/" + data["Head"]["mouth"]["img3"];            
+            mouth.style.position = "absolute";
+            mouth.style.zIndex = 7;
+            
+            //choose beautymark
+            let beautymark = document.createElement('img');
+            beautymark.src= "assets/img/" + data["Head"]["beautymark"]["img1"];            
+            beautymark.style.position = "absolute";
+            beautymark.style.zIndex = 7;
+            
+
+            //make monster
+            document.body.appendChild(head);
+            document.body.appendChild(bodyimg);
+            document.body.appendChild(shirtimg);
+            document.body.appendChild(bottomimg);
+            document.body.appendChild(hair);
+            document.body.appendChild(eyebrows);
+            document.body.appendChild(eyes);
+            document.body.appendChild(nose);
+            document.body.appendChild(mouth);
+            document.body.appendChild(beautymark);
+
+        }
+
+    </script>
 </body>
 </html>
