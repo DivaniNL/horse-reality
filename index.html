@@ -10,20 +10,37 @@
 </head>
 <body>
     <h2>Hello</h2>
+    <button id="body1">body1</button>
+    <button id="body2">body2</button>
+    <button id="hair1">hair1</button>
+    <button id="hair2">hair2</button>
+    <div id="body_gen">
     <script>
-        const Read_all = () => {
+        var bodygen = document.getElementById('body_gen');
+        var breasts;
+        var bodyType;
+        var shirtColor;
+        var hairStyle;
+        var eyesInput;
+        var eyebrowsInput;
+        var noseInput;
+        var mouthInput;
+        var beautymarkInput;
+        let Read_all = (breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput) => {
             fetch("assets/models/bodies.json")
             .then(response => response.json())
             .then(data => {
-                    Show(data);
+                    Show(data,breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput);
             }).catch(error => console.log('error is', error));
         }
 
-        Read_all();
+        Read_all("breasts", "Skinny", "white", "hair_2", "eyes_3", "brows_1", "nose_1", "mouth_1", "no");
     
-        let Show = (data) => {
-            console.log();
-
+        let Show = (data,breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput) => {
+            console.log(breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput);
+            while (bodygen.firstChild) {
+                bodygen.removeChild(bodygen.lastChild);
+            }
             //choose head
             let head = document.createElement('img');
             head.src= "assets/img/" + data["Bodies"]["head"];
@@ -32,73 +49,86 @@
 
             //choose body
             let bodyimg = document.createElement('img');
-            bodyimg.src= "assets/img/" + data["Bodies"]["types_no_breasts"]["skinny"];            
+            bodyimg.src= "assets/img/" + data["Bodies"]["types_" + breasts][bodyType];            
             bodyimg.style.position = "absolute";
             bodyimg.style.zIndex = 2;
 
             //choose shirt
             let shirtimg = document.createElement('img');
-            shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"]["Skinny"]["black_no_breasts"];            
+            shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"][bodyType][shirtColor + "_" + breasts];            
             shirtimg.style.position = "absolute";
             shirtimg.style.zIndex = 3;
             
             //choose bottom
             let bottomimg = document.createElement('img');
-            bottomimg.src= "assets/img/" + data["Clothing"]["Bottom"]["Skinny"];            
+            bottomimg.src= "assets/img/" + data["Clothing"]["Bottom"][bodyType];            
             bottomimg.style.position = "absolute";
             bottomimg.style.zIndex = 4;
             
             //choose hair            
             let hair = document.createElement('img');
-            hair.src= "assets/img/" + data["Head"]["hair"]["img2"];            
+            hair.src= "assets/img/" + data["Head"]["hair"][hairStyle];            
             hair.style.position = "absolute";
             hair.style.zIndex = 7;
             
             //choose brows
             let eyebrows = document.createElement('img');
-            eyebrows.src= "assets/img/" + data["Head"]["eyebrows"]["img1"];            
+            eyebrows.src= "assets/img/" + data["Head"]["eyebrows"][eyebrowsInput];            
             eyebrows.style.position = "absolute";
             eyebrows.style.zIndex = 5;
             
             //choose eyes
             let eyes = document.createElement('img');
-            eyes.src= "assets/img/" + data["Head"]["eyes"]["img1"];            
+            eyes.src= "assets/img/" + data["Head"]["eyes"][eyesInput];            
             eyes.style.position = "absolute";
             eyes.style.zIndex = 6;
             
             //choose nose
             let nose = document.createElement('img');
-            nose.src= "assets/img/" + data["Head"]["nose"]["img1"];            
+            nose.src= "assets/img/" + data["Head"]["nose"][noseInput];            
             nose.style.position = "absolute";
             nose.style.zIndex = 7;
             
             //choose mouth
             let mouth = document.createElement('img');
-            mouth.src= "assets/img/" + data["Head"]["mouth"]["img3"];            
+            mouth.src= "assets/img/" + data["Head"]["mouth"][mouthInput];            
             mouth.style.position = "absolute";
             mouth.style.zIndex = 7;
             
             //choose beautymark
-            let beautymark = document.createElement('img');
-            beautymark.src= "assets/img/" + data["Head"]["beautymark"]["img1"];            
+            if(beautymarkInput != "no"){
+                let beautymark = document.createElement('img');
+            beautymark.src= "assets/img/" + data["Head"]["beautymark"][beautymarkInput];            
             beautymark.style.position = "absolute";
             beautymark.style.zIndex = 7;
+            }
+
             
 
             //make monster
-            document.body.appendChild(head);
-            document.body.appendChild(bodyimg);
-            document.body.appendChild(shirtimg);
-            document.body.appendChild(bottomimg);
-            document.body.appendChild(hair);
-            document.body.appendChild(eyebrows);
-            document.body.appendChild(eyes);
-            document.body.appendChild(nose);
-            document.body.appendChild(mouth);
-            document.body.appendChild(beautymark);
+            bodygen.appendChild(head);
+            bodygen.appendChild(bodyimg);
+            bodygen.appendChild(shirtimg);
+            bodygen.appendChild(bottomimg);
+            bodygen.appendChild(hair);
+            bodygen.appendChild(eyebrows);
+            bodygen.appendChild(eyes);
+            bodygen.appendChild(nose);
+            bodygen.appendChild(mouth);
+            if(beautymarkInput != "no"){
+                bodygen.appendChild(beautymark);
+            }
 
         }
+        $('#body1').on('click', function() {
+            Read_all("breasts", "Skinny", "white", "hair_2", "eyes_3", "brows_1", "nose_1", "mouth_1", "no");
+        });
+
+        $('#body2').on('click', function() {
+            Read_all("no_breasts", "Masculine", "black", "hair_1", "eyes_1", "brows_2", "nose_1", "mouth_2", "beautymark_2");
+        });
 
     </script>
+    </div>
 </body>
 </html>

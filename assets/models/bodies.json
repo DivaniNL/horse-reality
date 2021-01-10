@@ -2,16 +2,16 @@
     "Bodies": {
         "head": "Bodies/_head_base.png",
         "types_no_breasts": {
-            "chubby": "Bodies/Chubby.png",
-            "curvy": "Bodies/Curvy.png",
-            "masculine": "Bodies/Masculine.png",
-            "skinny": "Bodies/Skinny.png"
+            "Chubby": "Bodies/Chubby.png",
+            "Curvy": "Bodies/Curvy.png",
+            "Masculine": "Bodies/Masculine.png",
+            "Skinny": "Bodies/Skinny.png"
         },
         "types_breasts": {
-            "chubby": "Bodies/Chubby_breasts.png",
-            "curvy": "Bodies/Curvy_breasts.png",
-            "masculine": "Bodies/Masculine_breasts.png",
-            "skinny": "Bodies/Skinny_breasts.png"
+            "Chubby": "Bodies/Chubby_breasts.png",
+            "Curvy": "Bodies/Curvy_breasts.png",
+            "Masculine": "Bodies/Masculine_breasts.png",
+            "Skinny": "Bodies/Skinny_breasts.png"
         }
     },
     "Clothing": {
@@ -50,35 +50,35 @@
     },
     "Head": {
         "beautymark": {
-            "img1": "Head/beautymark_1.png",
-            "img2": "Head/beautymark_2.png",
-            "img3": "Head/beautymark_3.png"
+            "beautymark_1": "Head/beautymark_1.png",
+            "beautymark_2": "Head/beautymark_2.png",
+            "beautymark_3": "Head/beautymark_3.png"
         },
         "eyebrows": {
-            "img1": "Head/brows_1.png",
-            "img2": "Head/brows_2.png",
-            "img3": "Head/brows_3.png"
+            "brows_1": "Head/brows_1.png",
+            "brows_2": "Head/brows_2.png",
+            "brows_3": "Head/brows_3.png"
         },
         "eyes": {
-            "img1": "Head/eyes_1.png",
-            "img2": "Head/eyes_2.png",
-            "img3": "Head/eyes_3.png"
+            "eyes_1": "Head/eyes_1.png",
+            "eyes_2": "Head/eyes_2.png",
+            "eyes_3": "Head/eyes_3.png"
         },
         "hair": {
-            "img1": "Head/hair_1.png",
-            "img2": "Head/hair_2.png",
-            "img3": "Head/hair_3.png",
-            "img4": "Head/hair_4.png"
+            "hair_1": "Head/hair_1.png",
+            "hair_2": "Head/hair_2.png",
+            "hair_3": "Head/hair_3.png",
+            "hair_4": "Head/hair_4.png"
         },
         "mouth": {
-            "img1": "Head/mouth_1.png",
-            "img2": "Head/mouth_2.png",
-            "img3": "Head/mouth_3.png"
+            "mouth_1": "Head/mouth_1.png",
+            "mouth_2": "Head/mouth_2.png",
+            "mouth_3": "Head/mouth_3.png"
         },
         "nose": {
-            "img1": "Head/nose_1.png",
-            "img2": "Head/nose_2.png",
-            "img3": "Head/nose_3.png"
+            "nose_1": "Head/nose_1.png",
+            "nose_2": "Head/nose_2.png",
+            "nose_3": "Head/nose_3.png"
         }
     }
 }
