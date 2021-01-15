@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <title>Bootstrap Boilerplate</title>
+    <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */ 
+     
+    </style>
+  </head>
+  <body>
+    
+<nav class="navbar navbar-inverse" style="background-color: #093951;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/hr-logo.png" width="180" height="40" alt="logo">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li style="background-color: #EFA804; border-radius: 100% 0% 47% 53% / 0% 0% 100% 100%  ;"><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid page-content  ">    
+  <div class="row content">
+    <div class="col-sm-2 d-md-none d-lg-block col-lg-2 sidenav">
+      
+    </div>
+    <div class="col-sm-6 col-lg-6 avatar "> 
+      <div id="body_gen">
+        <script>
+            var bodygen = document.getElementById('body_gen');
+            var type;
+            var breasts;
+            var bodyType;
+            var shirtColor;
+            var hairStyle;
+            var eyesInput;
+            var eyebrowsInput;
+            var noseInput;
+            var mouthInput;
+            var beautymarkInput;
+            let Read_all = (breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput) => {
+                fetch("assets/models/bodies.json")
+                .then(response => response.json())
+                .then(data => {
+                        Show(data,breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput);
+                }).catch(error => console.log('error is', error));
+            }
+            let Change_one = (type, input) => {
+                fetch("assets/models/bodies.json")
+                .then(response => response.json())
+                .then(data => {
+                        Changing(data, type, input);
+                }).catch(error => console.log('error is', error));
+            }
+    
+            //standard body
+            Read_all("breasts", "Masculine", "white", "hair_2", "eyes_3", "brows_1", "nose_1", "mouth_1", "no");
+        
+            let Show = (data,breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput) => {
+                console.log(breasts, bodyType, shirtColor, hairStyle, eyesInput, eyebrowsInput, noseInput, mouthInput, beautymarkInput);
+                while (bodygen.firstChild) {
+                    bodygen.removeChild(bodygen.lastChild);
+                }
+                //standard head
+                let head = document.createElement('img');
+                head.src= "assets/img/Bodies/_head_base.png";
+                head.style.position = "absolute";
+                head.style.zIndex = 1;
+                head.classList.add("body_part");
+    
+                //standard body
+                let bodyimg = document.createElement('img');
+                bodyimg.src= "assets/img/" + data["Bodies"]["types_" + breasts][bodyType];            
+                bodyimg.style.position = "absolute";
+                bodyimg.style.zIndex = 2;
+                bodyimg.id = "bodyImg";
+                bodyimg.classList.add("body_part");
+                sessionStorage.setItem("breasts", "breasts");
+                sessionStorage.setItem("type", "Masculine");
+    
+                //standard shirt
+                let shirtimg = document.createElement('img');
+                shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"][bodyType][shirtColor + "_" + breasts];            
+                shirtimg.style.position = "absolute";
+                shirtimg.style.zIndex = 3;
+                shirtimg.id = "shirtShown";
+                shirtimg.classList.add("body_part");
+                sessionStorage.setItem("color", "white");
+    
+                //standard bottom
+                let bottomimg = document.createElement('img');
+                bottomimg.src= "assets/img/" + data["Clothing"]["Bottom"][bodyType];            
+                bottomimg.style.position = "absolute";
+                bottomimg.style.zIndex = 4;
+                bottomimg.id = "bottomShown";  
+                bottomimg.classList.add("body_part");
+    
+                //standard hair            
+                let hair = document.createElement('img');
+                hair.src= "assets/img/" + data["Head"]["hair"][hairStyle];            
+                hair.style.position = "absolute";
+                hair.style.zIndex = 7;
+                hair.id = "hairShown";
+                hair.classList.add("body_part");
+                
+                //standard brows
+                let eyebrows = document.createElement('img');
+                eyebrows.src= "assets/img/" + data["Head"]["eyebrows"][eyebrowsInput];            
+                eyebrows.style.position = "absolute";
+                eyebrows.style.zIndex = 5;
+                eyebrows.id = "browsShown";
+                eyebrows.classList.add("body_part");
+                
+                //standard eyes
+                let eyes = document.createElement('img');
+                eyes.src= "assets/img/" + data["Head"]["eyes"][eyesInput];            
+                eyes.style.position = "absolute";
+                eyes.style.zIndex = 6;
+                eyes.id = "eyesShown";
+                eyes.classList.add("body_part");
+                
+                //standard nose
+                let nose = document.createElement('img');
+                nose.src= "assets/img/" + data["Head"]["nose"][noseInput];            
+                nose.style.position = "absolute";
+                nose.style.zIndex = 7;
+                nose.id = "noseShown";
+                nose.classList.add("body_part");
+                
+                //standard mouth
+                let mouth = document.createElement('img');
+                mouth.src= "assets/img/" + data["Head"]["mouth"][mouthInput];            
+                mouth.style.position = "absolute";
+                mouth.style.zIndex = 7;
+                mouth.id = "mouthShown";
+                mouth.classList.add("body_part");
+    
+                //standard beautymark
+                if(beautymarkInput != "no"){
+                    let beautymark = document.createElement('img');
+                beautymark.src= "assets/img/" + data["Head"]["beautymark"][beautymarkInput];            
+                beautymark.style.position = "absolute";
+                beautymark.style.zIndex = 7;
+                beautymark.id = "markShown";
+                beautymark.classList.add("body_part");
+                }
+    
+                
+    
+                //standard monster
+                    bodygen.appendChild(head);
+                    bodygen.appendChild(bodyimg);
+                    bodygen.appendChild(shirtimg);
+                    bodygen.appendChild(bottomimg);
+                    bodygen.appendChild(hair);
+                    bodygen.appendChild(eyebrows);
+                    bodygen.appendChild(eyes);
+                    bodygen.appendChild(nose);
+                    bodygen.appendChild(mouth);
+                    if(beautymarkInput != "no"){
+                        bodygen.appendChild(beautymark);
+                    }
+    
+            }
+    //////////////////////////////////////////////////change
+    
+            let Changing = (data,type, input) => {
+                console.log(type, input);
+    
+                //choose hair   
+                if(type == "hair"){
+                    $('#hairShown').remove();
+                    let hair = document.createElement('img');
+                    hair.src= "assets/img/" + data["Head"]["hair"][input];            
+                    hair.style.position = "absolute";
+                    hair.style.zIndex = 7;
+                    hair.id = "hairShown";
+                    bodygen.appendChild(hair);
+                    $('.hair').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    hair.classList.add("body_part");
+                }   
+                
+                if(type == "bodytype"){
+                    $('#bodyImg').remove();
+                    $('#shirtShown').remove();
+                    $('#bottomShown').remove();
+    
+                    var checkbreasts = sessionStorage.getItem("breasts");
+                    var checkcolor = sessionStorage.getItem("color");
+                
+                    let bodyimg = document.createElement('img');
+                    bodyimg.src= "assets/img/" + data["Bodies"]["types_" + checkbreasts][input];            
+                    bodyimg.style.position = "absolute";
+                    bodyimg.style.zIndex = 2;
+                    bodyimg.id = "bodyImg";
+                    bodygen.appendChild(bodyimg);
+                    sessionStorage.setItem("type", input);
+                    $('.bodytype').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    bodyimg.classList.add("body_part");
+    
+                    let shirtimg = document.createElement('img');
+                    shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"][input][checkcolor + "_" + checkbreasts];            
+                    shirtimg.style.position = "absolute";
+                    shirtimg.style.zIndex = 3;
+                    shirtimg.id = "shirtShown";
+                    bodygen.appendChild(shirtimg);
+                    shirtimg.classList.add("body_part");
+    
+                    let bottomimg = document.createElement('img');
+                    bottomimg.src= "assets/img/" + data["Clothing"]["Bottom"][input];            
+                    bottomimg.style.position = "absolute";
+                    bottomimg.style.zIndex = 4;
+                    bodygen.appendChild(bottomimg);
+                    bottomimg.id = "bottomShown";
+                    bottomimg.classList.add("body_part");
+                }  
+                
+                if(type == "eyes"){
+                    $('#eyesShown').remove();
+                    let eyes = document.createElement('img');
+                    eyes.src= "assets/img/" + data["Head"]["eyes"][input];            
+                    eyes.style.position = "absolute";
+                    eyes.style.zIndex = 6;
+                    eyes.id = "eyesShown";
+                    bodygen.appendChild(eyes);
+                    $('.eyes').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    eyes.classList.add("body_part");
+                    
+                }
+    
+                if(type == "brows"){
+                    $('#browsShown').remove();
+                    let eyebrows = document.createElement('img');
+                    eyebrows.src= "assets/img/" + data["Head"]["eyebrows"][input];            
+                    eyebrows.style.position = "absolute";
+                    eyebrows.style.zIndex = 5;
+                    eyebrows.id = "browsShown";
+                    bodygen.appendChild(eyebrows);
+                    $('.brows').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    eyebrows.classList.add("body_part");
+                }  
+    
+                if(type == "nose"){
+                    $('#noseShown').remove();
+                    let nose = document.createElement('img');
+                    nose.src= "assets/img/" + data["Head"]["nose"][input];            
+                    nose.style.position = "absolute";
+                    nose.style.zIndex = 7;
+                    nose.id = "noseShown";
+                    bodygen.appendChild(nose);
+                    $('.nose').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    nose.classList.add("body_part");
+                }
+    
+                if(type == "mouth"){
+                    $('#mouthShown').remove();
+                    let mouth = document.createElement('img');
+                    mouth.src= "assets/img/" + data["Head"]["mouth"][input];            
+                    mouth.style.position = "absolute";
+                    mouth.style.zIndex = 7;
+                    mouth.id = "mouthShown";
+                    bodygen.appendChild(mouth);
+                    $('.mouth').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    mouth.classList.add("body_part");
+                }
+    
+                if(type == "beautymark"){
+                    if(input != "no"){
+                        $('#markShown').remove();
+                        let beautymark = document.createElement('img');
+                        beautymark.src= "assets/img/" + data["Head"]["beautymark"][input];            
+                        beautymark.style.position = "absolute";
+                        beautymark.style.zIndex = 7;
+                        beautymark.id = "markShown";
+                        bodygen.appendChild(beautymark);
+                        $('.beautymark').removeClass('active');
+                        document.getElementById(input).classList.add('active');
+                        beautymark.classList.add("body_part");
+                    }
+                    if(input == "no"){
+                        $('.beautymark').removeClass('active');
+                        document.getElementById(input).classList.add('active');
+                        beautymark.classList.add("body_part");
+                    }
+                }
+    
+                if(type == "shirt"){
+                    $('#shirtShown').remove();
+                    var bodytype_check = sessionStorage.getItem("type");
+                    var checkbreasts = sessionStorage.getItem("breasts");
+    
+                    let shirtimg = document.createElement('img');
+                    shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"][bodytype_check][input + "_" + checkbreasts];            
+                    shirtimg.style.position = "absolute";
+                    shirtimg.style.zIndex = 3;
+                    shirtimg.id = "shirtShown";
+                    bodygen.appendChild(shirtimg);
+                    sessionStorage.setItem("color", input);
+                    $('.color').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    shirtimg.classList.add("body_part");
+                }
+    
+                if(type == "breasts"){
+                    $('#bodyImg').remove();
+                    $('#shirtShown').remove();
+    
+                    var bodytype_check = sessionStorage.getItem("type");
+                    var checkcolor = sessionStorage.getItem("color");
+                
+                    let bodyimg = document.createElement('img');
+                    bodyimg.src= "assets/img/" + data["Bodies"]["types_" + input][bodytype_check];            
+                    bodyimg.style.position = "absolute";
+                    bodyimg.style.zIndex = 2;
+                    bodyimg.id = "bodyImg";
+                    bodygen.appendChild(bodyimg);
+                    sessionStorage.setItem("breasts", input);
+                    bodyimg.classList.add("body_part");
+    
+                    let shirtimg = document.createElement('img');
+                    shirtimg.src= "assets/img/" + data["Clothing"]["Shirts"][bodytype_check][checkcolor + "_" + input];            
+                    shirtimg.style.position = "absolute";
+                    shirtimg.style.zIndex = 3;
+                    shirtimg.id = "shirtShown";
+                    bodygen.appendChild(shirtimg);
+                    $('.breasts').removeClass('active');
+                    document.getElementById(input).classList.add('active');
+                    shirtimg.classList.add("body_part");
+                }  
+            }
+        </script>
+        </div>
+        <script src="assets/js/script.js"></script>
+    </div>
+    <div class="col-sm-4 col-md-6 col-lg-4 sidenav text-center">
+      
+        <h1>Create avatar</h1>
+        <div class="customize">
+
+          <!-- hairStyles -->
+          <button class="btn btn-outline-primary customizers hair" id="hair_1" onclick='Change_one("hair", "hair_1")'>hair1</button>
+          <button class="btn btn-outline-primary customizers active hair" id="hair_2" onclick='Change_one("hair", "hair_2")'>hair2</button>
+          <button class="btn btn-outline-primary customizers hair" id="hair_3" onclick='Change_one("hair", "hair_3")'>hair3</button>
+          <button class="btn btn-outline-primary customizers hair" id="hair_4" onclick='Change_one("hair", "hair_4")'>hair4</button>
+      
+          <hr>
+          <!-- bodyTypes -->
+          <button class="btn btn-outline-primary customizers bodytype" id="Chubby" onclick='Change_one("bodytype", "Chubby")'>Chubby</button>
+          <button class="btn btn-outline-primary customizers bodytype" id="Curvy" onclick='Change_one("bodytype", "Curvy")'>Curvy</button>
+          <button class="btn btn-outline-primary customizers active bodytype" id="Masculine" onclick='Change_one("bodytype", "Masculine")'>Masculine</button>
+          <button class="btn btn-outline-primary customizers bodytype" id="Skinny" onclick='Change_one("bodytype", "Skinny")'>Skinny</button>
+          
+          <hr>
+          <!-- eyes -->
+          <button class="btn btn-outline-primary customizers eyes" id="eyes_1" onclick='Change_one("eyes", "eyes_1")'>Eyes 1</button>
+          <button class="btn btn-outline-primary customizers eyes" id="eyes_2" onclick='Change_one("eyes", "eyes_2")'>Eyes 2</button>
+          <button class="btn btn-outline-primary customizers active eyes" id="eyes_3" onclick='Change_one("eyes", "eyes_3")'>Eyes 3</button>
+      
+      
+          <hr>
+          <!-- eyeBrows -->
+          <button class="btn btn-outline-primary customizers active brows" id="brows_1" onclick='Change_one("brows", "brows_1")'>Eyebrows 1</button>
+          <button class="btn btn-outline-primary customizers brows" id="brows_2" onclick='Change_one("brows", "brows_2")'>Eyebrows 2</button>
+          <button class="btn btn-outline-primary customizers brows" id="brows_3" onclick='Change_one("brows", "brows_3")'>Eyebrows 3</button>
+        
+      
+          <hr>
+          <!-- nose -->
+          <button class="btn btn-outline-primary customizers active nose" id="nose_1" onclick='Change_one("nose", "nose_1")'>Nose 1</button>
+          <button class="btn btn-outline-primary customizers nose" id="nose_2" onclick='Change_one("nose", "nose_2")'>Nose 2</button>
+          <button class="btn btn-outline-primary customizers nose" id="nose_3" onclick='Change_one("nose", "nose_3")'>Nose 3</button>
+      
+          <hr>
+          <!-- mouth -->
+          <button class="btn btn-outline-primary customizers active mouth" id="mouth_1" onclick='Change_one("mouth", "mouth_1")'>mouth 1</button>
+          <button class="btn btn-outline-primary customizers mouth" id="mouth_2" onclick='Change_one("mouth", "mouth_2")'>mouth 2</button>
+          <button class="btn btn-outline-primary customizers mouth" id="mouth_3" onclick='Change_one("mouth", "mouth_3")'>mouth 3</button>
+      
+          <hr>
+          <!-- beautymark -->
+          <button class="btn btn-outline-primary customizers beautymark" id="beautymark_1" onclick='Change_one("beautymark", "beautymark_1")'>beautymark 1</button>
+          <button class="btn btn-outline-primary customizers beautymark" id="beautymark_2" onclick='Change_one("beautymark", "beautymark_2")'>beautymark 2</button>
+          <button class="btn btn-outline-primary customizers beautymark" id="beautymark_3" onclick='Change_one("beautymark", "beautymark_3")'>beautymark 3</button>
+          <button class="btn btn-outline-primary customizers active beautymark" id="no" onclick='Change_one("beautymark", "no")'>No mark</button>
+      
+      
+          <hr>
+          <!-- shirtcolor -->
+          <button class="btn btn-outline-primary customizers color" id="black" onclick='Change_one("shirt", "black")'>Black</button>
+          <button class="btn btn-outline-primary customizers active color" id="white" onclick='Change_one("shirt", "white")'>White</button>
+      
+          <hr>
+          <!-- breasts -->
+          <button class="btn btn-outline-primary customizers breasts" id="no_breasts" onclick='Change_one("breasts", "no_breasts")'>No Breasts</button>
+          <button class="btn btn-outline-primary customizers active breasts" id="breasts" onclick='Change_one("breasts", "breasts")'>Breasts</button>
+      
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center" style="background-color: #093951;">
+  <p></p>
+</footer>
+  </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</html>

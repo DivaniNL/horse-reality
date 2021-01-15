@@ -1,5 +1,104 @@
-body {
-    h2 {
-        color: #333;
+
+
+body{
+    .navbar{
+        margin-bottom: 0;
+        border-radius: 0;
+        .container-fluid{
+            .navbar-header{
+               
+            }
+
+
+        }
+        
     }
+    .page-content{
+        .content {
+            height: 100vh;
+            .sidenav{
+                padding-top: 20px;
+                background-color: #f1f1f1;
+                height: 100%;
+                .customize{
+                    .customizers{
+                        width: 40%;
+                    }
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .sidenav {
+                  height: auto;
+                  padding: 15px;
+                }
+            }
+
+            
+        }
+        @media screen and (max-width: 767px) {
+            .row.content {height:auto;} 
+        }
+        .avatar{
+            align-items: center;
+            #body_gen{
+                position: relative;
+                align-items: center;
+                margin-top: 50px;
+                .body_part{
+                    display: block;
+                    left: 30%;
+                    width: 40%;
+                }
+            }   
+        }
+        @media screen and (max-width: 768px) {
+            .avatar{
+                height: 750px;
+            #body_gen{
+                margin-top: 0px;
+                .body_part{
+                    width: 45%;
+                    left: 20%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .avatar{
+                height: 400px;
+            #body_gen{
+
+                .body_part{
+                    width: 35%;
+                    left: 30%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+            }
+        }
+        @media screen and (max-width: 400px) {
+            .avatar{
+                height: 400px;
+            #body_gen{
+
+                .body_part{
+                    width: 45%;
+                    left: 30%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+            }
+        }
+
+    }
+}
+//text left optie
+    
+.active{
+    background-color: #333;
+    color: white;
 }

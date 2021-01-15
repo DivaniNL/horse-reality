@@ -17,28 +17,28 @@
     "Clothing": {
         "Shirts": {
             "Skinny": {
-                "black_breasts": "Clothing/Shirts/skinny/shirt_black_breasts.png",
-                "black_no_breasts": "Clothing/Shirts/skinny/shirt_black.png",
-                "white_breasts": "Clothing/Shirts/skinny/shirt_white_breasts.png",
-                "white_no_breasts": "Clothing/Shirts/skinny/shirt_white.png"
+                "black_breasts": "Clothing/Shirts/Skinny/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/Skinny/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/Skinny/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/Skinny/shirt_white.png"
             },
             "Curvy": {
-                "black_breasts": "Clothing/Shirts/curvy/shirt_black_breasts.png",
-                "black_no_breasts": "Clothing/Shirts/curvy/shirt_black.png",
-                "white_breasts": "Clothing/Shirts/curvy/shirt_white_breasts.png",
-                "white_no_breasts": "Clothing/Shirts/curvy/shirt_white.png"
+                "black_breasts": "Clothing/Shirts/Curvy/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/Curvy/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/Curvy/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/Curvy/shirt_white.png"
             },
             "Chubby": {
-                "black_breasts": "Clothing/Shirts/chubby/shirt_black_breasts.png",
-                "black_no_breasts": "Clothing/Shirts/chubby/shirt_black.png",
-                "white_breasts": "Clothing/Shirts/chubby/shirt_white_breasts.png",
-                "white_no_breasts": "Clothing/Shirts/chubby/shirt_white.png"
+                "black_breasts": "Clothing/Shirts/Chubby/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/Chubby/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/Chubby/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/Chubby/shirt_white.png"
             },
             "Masculine": {
-                "black_breasts": "Clothing/Shirts/masculine/shirt_black_breasts.png",
-                "black_no_breasts": "Clothing/Shirts/masculine/shirt_black.png",
-                "white_breasts": "Clothing/Shirts/masculine/shirt_white_breasts.png",
-                "white_no_breasts": "Clothing/Shirts/masculine/shirt_white.png"
+                "black_breasts": "Clothing/Shirts/Masculine/shirt_black_breasts.png",
+                "black_no_breasts": "Clothing/Shirts/Masculine/shirt_black.png",
+                "white_breasts": "Clothing/Shirts/Masculine/shirt_white_breasts.png",
+                "white_no_breasts": "Clothing/Shirts/Masculine/shirt_white.png"
             }
         },
         "Bottom": {
